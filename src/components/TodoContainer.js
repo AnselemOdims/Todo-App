@@ -27,7 +27,7 @@ class TodoContainer extends Component {
   }
 
   render() {
-    const { todos } = this.state
+    const { todos } = this.state;
     return (
       <div>
         <Header />
