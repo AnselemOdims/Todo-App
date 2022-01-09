@@ -1,4 +1,5 @@
-/* eslint-disable no-param-reassign */
+/* eslint-disable no-tabs */
+/* eslint-disable no-mixed-spaces-and-tabs */
 import React, { Component } from 'react';
 import Header from './Header';
 import TodoList from './TodosList';
@@ -27,29 +28,39 @@ class TodoContainer extends Component {
     };
   }
 
-  handleChange = (idx) => {
-    this.setState((prevState) => ({
-      todos: prevState.todos.map((todo) => {
-        if (todo.id === idx) {
-          return {
-            ...todo,
-            completed: !todo.completed,
-          }
-        }
-        return todo;
-      }),
-    }));
-  }
+	handleChange = (idx) => {
+	  this.setState((prevState) => ({
+	    todos: prevState.todos.map((todo) => {
+	      if (todo.id === idx) {
+	        return {
+	          ...todo,
+	          completed: !todo.completed,
+	        };
+	      }
+	      return todo;
+	    }),
+	  }));
+	};
 
-  render() {
-    const { todos } = this.state;
-    return (
-      <div>
-        <Header />
-        <TodoList todos={todos} handleChangeProps={this.handleChange} />
-      </div>
-    );
-  }
+	handleDelete = (id) => {
+	  this.setState((prevState) => ({
+	    todos: prevState.todos.filter((todo) => todo.id !== id),
+	  }));
+	};
+
+	render() {
+	  const { todos } = this.state;
+	  return (
+  <div>
+    <Header />
+    <TodoList
+      todos={todos}
+      handleChangeProps={this.handleChange}
+      handleDeleteProps={this.handleDelete}
+    />
+  </div>
+	  );
+	}
 }
 
 export default TodoContainer;
