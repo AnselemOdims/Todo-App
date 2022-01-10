@@ -15,7 +15,7 @@ class TodoContainer extends Component {
   }
 
   async componentDidMount() {
-    const todos = JSON.parse(localStorage.getItem('todos'));
+    const todos = JSON.parse(localStorage.getItem('todos')) || [];
     this.setState({ todos });
   }
 
@@ -81,12 +81,14 @@ class TodoContainer extends Component {
     <div className="inner">
       <Header />
       <InputTodo handleSubmitProps={this.addTodo} />
-      <TodoList
-        todos={todos}
-        handleChangeProps={this.handleChange}
-        handleDeleteProps={this.handleDelete}
-        handleEditProps={this.editTodo}
-      />
+      {todos.length !== 0 ? (
+        <TodoList
+          todos={todos}
+          handleChangeProps={this.handleChange}
+          handleDeleteProps={this.handleDelete}
+          handleEditProps={this.editTodo}
+        />
+      ) : <h3>No todos added yet</h3>}
     </div>
   </div>
 	  );

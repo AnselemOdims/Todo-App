@@ -3,6 +3,7 @@
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import styles from './TodoItem.module.css';
+import Icon from '../images/check.svg';
 
 const TodoItem = (props) => {
   const [edit, setEdit] = useState(false);
@@ -43,12 +44,14 @@ const TodoItem = (props) => {
         onDoubleClick={handleDoubleClick}
         style={viewMode}
       >
-        <input
-          type="checkbox"
-          className={styles.checkbox}
-          checked={completed}
-          onChange={() => handleChange(id)}
-        />
+        {!completed ? (
+          <input
+            type="checkbox"
+            className={styles.checkbox}
+            checked={completed}
+            onChange={() => handleChange(id)}
+          />
+        ) : <img src={Icon} alt="check" onClick={() => handleChange(id)} />}
         <span className={completed ? styles.completedStyle : ''}>{title}</span>
         <button type="button" onClick={() => handleDelete(id)}>
           Delete
@@ -72,7 +75,7 @@ const TodoItem = (props) => {
 
 TodoItem.propTypes = {
   todo: PropTypes.shape({
-    id: PropTypes.number,
+    id: PropTypes.string,
     title: PropTypes.string,
     completed: PropTypes.bool,
   }).isRequired,

@@ -24,7 +24,7 @@
 
 .completedStyle {
   font-style: italic;
-  color: #595959;
+  color: green;
   opacity: 0.4;
   text-decoration: line-through;
 }
