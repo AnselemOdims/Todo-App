@@ -11,7 +11,7 @@
 
 .item button {
   font-size: 13px;
-  background: #f1f3f4;
+  background: #21222a;
   border: none;
   cursor: pointer;
   float: right;
@@ -25,7 +25,6 @@
 .completedStyle {
   font-style: italic;
   color: green;
-  opacity: 0.4;
   text-decoration: line-through;
 }
 
@@ -33,4 +32,8 @@
   width: 100%;
   padding: 10px;
   border: 1px solid #dfdfdf;
+}
+
+.textColor {
+  color: #fff;
 }

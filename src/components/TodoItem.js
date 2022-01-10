@@ -50,9 +50,9 @@ const TodoItem = (props) => {
             onChange={() => handleChange(id)}
           />
         ) : (
-          <FcCheckmark onClick={() => handleChange(id)} style={{ marginRight: '20px' }} />
+          <FcCheckmark onClick={() => handleChange(id)} style={{ marginRight: '20px', color: 'darkcyan' }} />
         )}
-        <span className={completed ? styles.completedStyle : ''}>{title}</span>
+        <span className={completed ? styles.completedStyle : styles.textColor}>{title}</span>
         <button type="button" onClick={() => handleDelete(id)}>
           <FaTrashAlt color="red" size="16px" />
         </button>

@@ -2,7 +2,6 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import React, { useState, useEffect } from 'react';
 import { v4 as uuid } from 'uuid';
-import Header from './Header';
 import TodoList from './TodosList';
 import InputTodo from './InputTodo';
 
@@ -58,7 +57,6 @@ const TodoContainer = () => {
 	  return (
   <div className="container">
     <div className="inner">
-      <Header />
       <InputTodo handleSubmitProps={addTodo} />
       {todos.length !== 0 ? (
         <TodoList

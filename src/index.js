@@ -3,6 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import TodoContainer from './components/TodoContainer';
 import About from './pages/About';
 import NotMatch from './pages/NotMatch';
