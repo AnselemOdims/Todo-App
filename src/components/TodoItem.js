@@ -35,7 +35,7 @@ const TodoItem = (props) => {
     document.querySelectorAll('.TodoItem_textInput__N9CPb').forEach((item) => {
       item.focus();
     });
-  });
+  }, [edit]);
 
   return (
     <li className={styles.item}>

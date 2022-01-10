@@ -10,24 +10,14 @@ class TodoContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todos: [
-        {
-          id: uuid(),
-          title: 'Setup development environment',
-          completed: true,
-        },
-        {
-          id: uuid(),
-          title: 'Develop website and add content',
-          completed: false,
-        },
-        {
-          id: uuid(),
-          title: 'Deploy to live server',
-          completed: false,
-        },
-      ],
+      todos: [],
     };
+  }
+
+  async componentDidMount() {
+    const res = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=10');
+    const json = await res.json();
+    this.setState({ todos: json });
   }
 
 	handleChange = (idx) => {
