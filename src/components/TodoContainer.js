@@ -15,9 +15,15 @@ class TodoContainer extends Component {
   }
 
   async componentDidMount() {
-    const res = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=10');
-    const json = await res.json();
-    this.setState({ todos: json });
+    const todos = JSON.parse(localStorage.getItem('todos'));
+    this.setState({ todos });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { todos } = this.state;
+    if (prevState.todos !== todos) {
+      localStorage.setItem('todos', JSON.stringify(todos));
+    }
   }
 
 	handleChange = (idx) => {
