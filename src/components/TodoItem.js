@@ -2,8 +2,9 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
+import { FaTrashAlt } from 'react-icons/fa';
+import { FcCheckmark } from 'react-icons/fc';
 import styles from './TodoItem.module.css';
-import Icon from '../images/check.svg';
 
 const TodoItem = (props) => {
   const [edit, setEdit] = useState(false);
@@ -40,10 +41,7 @@ const TodoItem = (props) => {
 
   return (
     <li className={styles.item}>
-      <div
-        onDoubleClick={handleDoubleClick}
-        style={viewMode}
-      >
+      <div onDoubleClick={handleDoubleClick} style={viewMode}>
         {!completed ? (
           <input
             type="checkbox"
@@ -51,10 +49,12 @@ const TodoItem = (props) => {
             checked={completed}
             onChange={() => handleChange(id)}
           />
-        ) : <img src={Icon} alt="check" onClick={() => handleChange(id)} />}
+        ) : (
+          <FcCheckmark onClick={() => handleChange(id)} style={{ marginRight: '20px' }} />
+        )}
         <span className={completed ? styles.completedStyle : ''}>{title}</span>
         <button type="button" onClick={() => handleDelete(id)}>
-          Delete
+          <FaTrashAlt color="red" size="16px" />
         </button>
       </div>
       <input
@@ -65,8 +65,8 @@ const TodoItem = (props) => {
         onChange={handleEdit}
         onKeyDown={handleEnter}
         onBlur={(e) => {
-          handleEdit(e);
-          setEdit(false);
+				  handleEdit(e);
+				  setEdit(false);
         }}
       />
     </li>
