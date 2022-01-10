@@ -28,3 +28,9 @@
   opacity: 0.4;
   text-decoration: line-through;
 }
+
+.textInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dfdfdf;
+}
