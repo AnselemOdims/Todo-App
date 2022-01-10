@@ -49,12 +49,26 @@ class TodoContainer extends Component {
 	  }));
 	};
 
-	render() {
+  addTodo = (title) => {
+    this.setState((prevState) => {
+      const newTodo = {
+        id: prevState.todos.length + 1,
+        title,
+        completed: false,
+      };
+
+      return {
+        todos: [...prevState.todos, newTodo],
+      };
+    });
+  }
+
+  render() {
 	  const { todos } = this.state;
 	  return (
   <div>
     <Header />
-    <InputTodo />
+    <InputTodo handleSubmitProps={this.addTodo} />
     <TodoList
       todos={todos}
       handleChangeProps={this.handleChange}
@@ -62,7 +76,7 @@ class TodoContainer extends Component {
     />
   </div>
 	  );
-	}
+  }
 }
 
 export default TodoContainer;
