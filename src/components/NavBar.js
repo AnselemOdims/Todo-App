@@ -5,23 +5,23 @@ const NavBar = () => {
     {
       id: 1,
       path: '/',
-      text: 'Home'
+      text: 'Home',
     },
     {
       id: 2,
       path: '/about',
-      text: 'About'
-    }
-  ]
-  return ( 
-      <nav className="navBar">
-        <ul>
-          {links.map(link=> (
-            <NavLink to={link.path} key={link.id}>{link.text}</NavLink>
-          ))}
-        </ul>
-      </nav>
-   );
-}
- 
+      text: 'About',
+    },
+  ];
+  return (
+    <nav className="navBar">
+      <ul>
+        {links.map((link) => (
+          <NavLink to={link.path} key={link.id}>{link.text}</NavLink>
+        ))}
+      </ul>
+    </nav>
+  );
+};
+
 export default NavBar;

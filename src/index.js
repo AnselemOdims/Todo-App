@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TodoContainer from './components/TodoContainer';
 import About from './pages/About';
 import NotMatch from './pages/NotMatch';
-import NavBar from './components/NavBar'
+import NavBar from './components/NavBar';
 import './App.css';
 
 ReactDOM.render(
