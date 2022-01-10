@@ -11,8 +11,12 @@ const InputTodo = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { handleSubmitProps } = props;
-    handleSubmitProps(inputVal);
-    setInputVal('');
+    if (inputVal.trim()) {
+      handleSubmitProps(inputVal);
+      setInputVal('');
+    } else {
+      alert('Todo can not be empty');
+    }
   };
 
   return (

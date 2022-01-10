@@ -1,6 +1,7 @@
 /* eslint-disable no-tabs */
 /* eslint-disable no-mixed-spaces-and-tabs */
 import React, { Component } from 'react';
+import { v4 as uuid } from 'uuid';
 import Header from './Header';
 import TodoList from './TodosList';
 import InputTodo from './InputTodo';
@@ -11,17 +12,17 @@ class TodoContainer extends Component {
     this.state = {
       todos: [
         {
-          id: 1,
+          id: uuid(),
           title: 'Setup development environment',
           completed: true,
         },
         {
-          id: 2,
+          id: uuid(),
           title: 'Develop website and add content',
           completed: false,
         },
         {
-          id: 3,
+          id: uuid(),
           title: 'Deploy to live server',
           completed: false,
         },
@@ -52,7 +53,7 @@ class TodoContainer extends Component {
   addTodo = (title) => {
     this.setState((prevState) => {
       const newTodo = {
-        id: prevState.todos.length + 1,
+        id: uuid(),
         title,
         completed: false,
       };
