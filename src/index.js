@@ -3,7 +3,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TodoContainer from './components/TodoContainer';
 import About from './pages/About';
@@ -13,7 +13,7 @@ import './App.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <NavBar />
       <Routes>
         <Route path="/" element={<TodoContainer />} />
