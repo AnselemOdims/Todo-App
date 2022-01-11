@@ -7,7 +7,8 @@
 
 ## Screenshot
 
-![screenshot](./src/images/todo.png)
+![todo](https://user-images.githubusercontent.com/43995830/148915417-b3eda7bd-e7cd-46be-af45-e1b048e59200.gif)
+
 
 
 Additional description about the project and its features.
