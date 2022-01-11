@@ -1,5 +1,6 @@
 /* eslint-disable no-tabs */
 /* eslint-disable no-mixed-spaces-and-tabs */
+/* eslint-disable react/jsx-no-undef */
 import React, { useState, useEffect } from 'react';
 import { v4 as uuid } from 'uuid';
 import TodoList from './TodosList';
